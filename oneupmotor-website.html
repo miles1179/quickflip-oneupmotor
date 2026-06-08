@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Up Motor | Auto, Motorcycle & Truck Repair | Waterbury, CT</title>
+<meta name="description" content="One Up Motor in Waterbury, CT. Expert auto repair, motorcycle repair, and commercial truck repair. Open 24 hours. Call (203) 886-6293 for a quote today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --gold: #D4920A;
+  --gold-light: #F0A812;
+  --gold-dark: #A87008;
+  --orange: #E05A0A;
+  --red: #C41E1E;
+  --black: #0A0A0A;
+  --near-black: #111111;
+  --dark: #1A1710;
+  --dark2: #242018;
+  --dark3: #2E2A20;
+  --muted: #6B6450;
+  --tan: #C8B89A;
+  --cream: #F5EFE4;
+  --warm-white: #FAF6EE;
+  --white: #FFFFFF;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-heading: 'Rajdhani', sans-serif;
+  --font-body: 'Barlow', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--near-black); color: var(--white); line-height: 1.6; }
+
+/* NAV */
+nav {
+  background: var(--black);
+  border-bottom: 3px solid var(--gold);
+  padding: 0 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+.nav-logo-icon {
+  width: 44px;
+  height: 44px;
+}
+.nav-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+.nav-logo-top {
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: 4px;
+  color: var(--gold);
+}
+.nav-logo-bottom {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+.nav-links { display: flex; gap: 2rem; align-items: center; }
+.nav-links a {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-cta {
+  background: var(--gold) !important;
+  color: var(--black) !important;
+  padding: 9px 22px;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+}
+.nav-cta:hover { background: var(--gold-light) !important; }
+
+/* HERO */
+.hero {
+  background: var(--dark);
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  padding: 5rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 75% 50%, rgba(212,146,10,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(224,90,10,0.08) 0%, transparent 50%);
+}
+.hero-grid-lines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(212,146,10,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,146,10,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-gold-bar {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 5px;
+  background: linear-gradient(to bottom, var(--gold), var(--orange));
+}
+.hero-content { position: relative; z-index: 2; max-width: 680px; }
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(212,146,10,0.15);
+  border: 1px solid rgba(212,146,10,0.4);
+  padding: 5px 14px;
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 1.25rem;
+}
+.hero-badge-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
+.hero-eyebrow {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: 100px;
+  line-height: 0.88;
+  letter-spacing: 3px;
+  color: var(--white);
+  margin-bottom: 1.75rem;
+}
+.hero h1 em { color: var(--gold); font-style: normal; }
+.hero-sub {
+  font-size: 17px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 2.5rem;
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+
+.btn { display: inline-block; text-decoration: none; cursor: pointer; border: none; font-family: var(--font-heading); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; transition: all 0.2s; }
+.btn-gold { background: var(--gold); color: var(--black); padding: 15px 36px; font-size: 15px; }
+.btn-gold:hover { background: var(--gold-light); }
+.btn-outline { background: transparent; color: var(--white); padding: 14px 34px; font-size: 15px; border: 1.5px solid rgba(255,255,255,0.25); }
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+.btn-outline-dark { background: transparent; color: var(--dark); padding: 14px 34px; font-size: 15px; border: 1.5px solid rgba(26,23,16,0.3); }
+.btn-outline-dark:hover { border-color: var(--dark); }
+.btn-dark { background: var(--dark); color: var(--gold); padding: 15px 36px; font-size: 15px; }
+.btn-dark:hover { background: var(--dark2); }
+
+.hero-stats { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+.stat-item { display: flex; flex-direction: column; gap: 3px; }
+.stat-num { font-family: var(--font-display); font-size: 36px; color: var(--gold); line-height: 1; }
+.stat-label { font-family: var(--font-heading); font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+
+/* Hero decorative car SVG watermark */
+.hero-watermark {
+  position: absolute;
+  right: 3%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.07;
+  pointer-events: none;
+}
+
+/* TICKER */
+.ticker { background: var(--gold); padding: 10px 0; overflow: hidden; white-space: nowrap; }
+.ticker-track { display: inline-flex; gap: 3rem; animation: ticker 26s linear infinite; }
+.ticker-item { font-family: var(--font-heading); font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--black); display: flex; align-items: center; gap: 1.25rem; }
+.ticker-dot { width: 4px; height: 4px; background: rgba(0,0,0,0.35); border-radius: 50%; flex-shrink: 0; }
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* SECTIONS */
+section { padding: 5.5rem 2.5rem; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-label { font-family: var(--font-heading); font-size: 12px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+.section-title { font-family: var(--font-display); font-size: 58px; line-height: 0.93; letter-spacing: 1.5px; color: var(--white); margin-bottom: 1rem; }
+.section-title em { color: var(--gold); font-style: normal; }
+.section-title-dark { color: var(--dark); }
+.section-title-dark em { color: var(--gold-dark); }
+.section-body { font-size: 16px; color: rgba(255,255,255,0.55); line-height: 1.7; max-width: 520px; }
+.section-body-dark { color: var(--muted); }
+
+/* PHOTO STRIP */
+.photo-strip {
+  background: var(--black);
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+  height: 220px;
+}
+.photo-cell {
+  overflow: hidden;
+  position: relative;
+  background: var(--dark3);
+}
+.photo-cell-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.2);
+  text-transform: uppercase;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.4s;
+}
+.photo-cell:hover .photo-cell-inner { transform: scale(1.03); }
+.photo-cell-icon { font-size: 36px; opacity: 0.3; }
+.photo-cell-label { font-size: 11px; letter-spacing: 3px; opacity: 0.4; }
+
+/* SERVICES */
+.services-bg { background: var(--warm-white); }
+.services-grid {
+  margin-top: 3.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.service-card {
+  background: var(--white);
+  border: 1px solid #E8DDD0;
+  padding: 2.25rem 1.75rem;
+  position: relative;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.service-card:hover { border-color: var(--gold); box-shadow: 0 4px 24px rgba(212,146,10,0.12); }
+.service-top-bar { position: absolute; top: 0; left: 0; right: 0; height: 4px; background: transparent; transition: background 0.25s; }
+.service-card:hover .service-top-bar { background: linear-gradient(90deg, var(--gold), var(--orange)); }
+.service-icon { font-size: 36px; margin-bottom: 1.25rem; display: block; }
+.service-name { font-family: var(--font-display); font-size: 30px; letter-spacing: 1px; color: var(--dark); margin-bottom: 0.5rem; }
+.service-desc { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+.service-features { list-style: none; }
+.service-features li {
+  font-size: 13px;
+  color: var(--muted);
+  padding: 4px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.5;
+}
+.service-features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+/* WHY US */
+.why-bg { background: var(--dark); }
+.why-grid { margin-top: 3.5rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+.why-card {
+  background: var(--dark2);
+  border: 1px solid rgba(212,146,10,0.15);
+  padding: 2rem;
+  position: relative;
+  transition: border-color 0.25s;
+}
+.why-card:hover { border-color: rgba(212,146,10,0.4); }
+.why-card-num {
+  font-family: var(--font-display);
+  font-size: 56px;
+  color: rgba(212,146,10,0.12);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.why-card-title {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.why-card-icon {
+  position: absolute;
+  top: 1.75rem;
+  right: 1.75rem;
+  font-size: 28px;
+  opacity: 0.5;
+}
+.why-card-desc { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.7; }
+
+/* PROCESS */
+.process-bg { background: var(--cream); }
+.process-steps {
+  margin-top: 3.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.process-step {
+  background: var(--white);
+  border: 1px solid #E0D5C5;
+  padding: 2rem 1.5rem;
+  position: relative;
+}
+.step-number {
+  font-family: var(--font-display);
+  font-size: 64px;
+  color: rgba(212,146,10,0.12);
+  line-height: 1;
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+}
+.step-icon-box {
+  width: 46px; height: 46px;
+  background: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 1.25rem;
+}
+.step-title {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+}
+.step-desc { font-size: 14px; color: var(--muted); line-height: 1.65; }
+
+/* REVIEWS */
+.reviews-bg { background: var(--near-black); }
+.reviews-grid {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.review-card {
+  background: var(--dark2);
+  border: 1px solid rgba(212,146,10,0.15);
+  padding: 1.75rem;
+  border-top: 3px solid var(--gold);
+}
+.review-stars { color: var(--gold); font-size: 15px; letter-spacing: 2px; margin-bottom: 1rem; }
+.review-text { font-size: 15px; color: rgba(255,255,255,0.68); line-height: 1.7; font-style: italic; margin-bottom: 1.25rem; }
+.review-author { font-family: var(--font-heading); font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+
+/* FAQ */
+.faq-bg { background: var(--warm-white); }
+.faq-wrap { margin-top: 3rem; max-width: 740px; }
+.faq-item { border-bottom: 1px solid #E0D5C5; }
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--dark);
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: left;
+  padding: 1.25rem 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.faq-plus { color: var(--gold); font-size: 22px; font-weight: 300; flex-shrink: 0; transition: transform 0.2s; line-height: 1; }
+.faq-item.open .faq-plus { transform: rotate(45deg); }
+.faq-answer { font-size: 15px; color: var(--muted); line-height: 1.7; padding-bottom: 1.25rem; display: none; }
+.faq-item.open .faq-answer { display: block; }
+
+/* CTA BANNER */
+.cta-banner {
+  background: linear-gradient(135deg, var(--dark) 0%, var(--dark3) 100%);
+  border-top: 3px solid var(--gold);
+  border-bottom: 3px solid var(--gold);
+  padding: 4.5rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(212,146,10,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(212,146,10,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.cta-banner-text { position: relative; }
+.cta-banner-text h2 {
+  font-family: var(--font-display);
+  font-size: 52px;
+  letter-spacing: 2px;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.cta-banner-text h2 em { color: var(--gold); font-style: normal; }
+.cta-banner-text p { font-size: 16px; color: rgba(255,255,255,0.6); max-width: 480px; line-height: 1.65; }
+.cta-banner-actions { position: relative; display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-end; }
+.phone-number {
+  font-family: var(--font-display);
+  font-size: 36px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-decoration: none;
+}
+.phone-number:hover { color: var(--gold-light); }
+
+/* LOCATIONS */
+.locations-bg { background: var(--cream); }
+.loc-card { background: var(--white); border: 1px solid #E0D5C5; padding: 2rem; border-top: 4px solid var(--gold); }
+.loc-name { font-family: var(--font-display); font-size: 28px; letter-spacing: 1px; color: var(--dark); margin-bottom: 0.25rem; }
+.loc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(212,146,10,0.12);
+  border: 1px solid rgba(212,146,10,0.3);
+  padding: 3px 10px;
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 1rem;
+}
+.loc-badge-dot { width: 6px; height: 6px; background: #22C55E; border-radius: 50%; }
+.loc-details { font-size: 14px; color: var(--muted); line-height: 1.9; margin-bottom: 1.25rem; }
+.loc-phone { font-family: var(--font-heading); font-size: 16px; font-weight: 700; color: var(--gold-dark); text-decoration: none; letter-spacing: 1px; display: block; margin-bottom: 1rem; }
+.loc-phone:hover { color: var(--gold); }
+
+/* FINAL CTA */
+.final-cta-bg { background: var(--black); }
+.final-cta { text-align: center; padding: 6.5rem 2.5rem; position: relative; overflow: hidden; }
+.final-cta-glow { position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(212,146,10,0.1) 0%, transparent 65%); pointer-events: none; }
+.final-cta h2 { font-family: var(--font-display); font-size: 80px; line-height: 0.9; letter-spacing: 2px; color: var(--white); margin-bottom: 1.5rem; position: relative; }
+.final-cta h2 em { color: var(--gold); font-style: normal; }
+.final-cta p { font-size: 17px; color: rgba(255,255,255,0.55); line-height: 1.7; max-width: 480px; margin: 0 auto 2.5rem; position: relative; }
+.cta-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
+
+/* FOOTER */
+footer { background: var(--dark); border-top: 3px solid var(--gold); padding: 3.5rem 2.5rem 2rem; }
+.footer-grid { max-width: 1100px; margin: 0 auto 2.5rem; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; }
+.footer-logo-text { font-family: var(--font-display); font-size: 30px; letter-spacing: 3px; color: var(--white); margin-bottom: 0.25rem; }
+.footer-logo-text span { color: var(--gold); }
+.footer-logo-sub { font-family: var(--font-heading); font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+.footer-tagline { font-size: 14px; color: rgba(255,255,255,0.4); line-height: 1.7; max-width: 280px; margin-bottom: 1.5rem; }
+.social-row { display: flex; gap: 0.65rem; }
+.social-link { width: 38px; height: 38px; background: rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; font-size: 13px; font-family: var(--font-heading); font-weight: 700; letter-spacing: 1px; color: rgba(255,255,255,0.4); text-decoration: none; transition: background 0.2s, color 0.2s; }
+.social-link:hover { background: var(--gold); color: var(--black); }
+.footer-col h4 { font-family: var(--font-heading); font-size: 12px; font-weight: 700; letter-spacing: 3.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+.footer-col ul { list-style: none; }
+.footer-col li { font-size: 14px; color: rgba(255,255,255,0.42); margin-bottom: 0.55rem; line-height: 1.5; }
+.footer-col a { color: rgba(255,255,255,0.42); text-decoration: none; transition: color 0.2s; }
+.footer-col a:hover { color: var(--gold); }
+.footer-bottom { max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.28); }
+.footer-bottom a { color: var(--gold); text-decoration: none; }
+
+@media (max-width: 900px) {
+  .hero h1 { font-size: 68px; }
+  .section-title { font-size: 42px; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: repeat(2, 1fr); }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .photo-strip { grid-template-columns: repeat(2, 1fr); height: auto; }
+  .photo-cell { height: 140px; }
+}
+@media (max-width: 600px) {
+  nav { padding: 0 1.25rem; }
+  .nav-links { display: none; }
+  section { padding: 4rem 1.25rem; }
+  .hero { padding: 3.5rem 1.25rem; min-height: auto; }
+  .hero h1 { font-size: 54px; }
+  .section-title { font-size: 36px; }
+  .services-grid, .process-steps, .footer-grid { grid-template-columns: 1fr; }
+  .final-cta h2 { font-size: 48px; }
+  .cta-banner { text-align: center; justify-content: center; }
+  .cta-banner-actions { align-items: center; }
+  .photo-strip { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg class="nav-logo-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="22" cy="22" r="21" stroke="#D4920A" stroke-width="1.5"/>
+      <circle cx="22" cy="22" r="16" fill="#1A1710"/>
+      <!-- Wrench -->
+      <path d="M16 14 Q13 14 13 17 Q13 19 15 20 L26 31 Q27 32 28 31 Q29 30 28 29 L17 18 Q16 17 16 14Z" fill="#D4920A" opacity="0.9"/>
+      <circle cx="27.5" cy="30.5" r="2" fill="#D4920A"/>
+      <!-- Car silhouette hint -->
+      <path d="M12 28 L14 25 L17 24 L27 24 L30 25 L32 28 L32 30 L12 30 Z" fill="#D4920A" opacity="0.7"/>
+      <circle cx="16" cy="30" r="2" fill="#0A0A0A" stroke="#D4920A" stroke-width="1"/>
+      <circle cx="28" cy="30" r="2" fill="#0A0A0A" stroke="#D4920A" stroke-width="1"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span class="nav-logo-top">ONE UP</span>
+      <span class="nav-logo-bottom">Motor</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#why-us">Why Us</a>
+    <a href="#locations">Location</a>
+    <a href="#faq">FAQ</a>
+    <a href="tel:2038866293" class="nav-cta btn">Call Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-gold-bar"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="hero-badge-dot"></span> Open 24 Hours &bull; Waterbury, CT</div>
+    <div class="hero-eyebrow">Waterbury's Trusted Repair Shop</div>
+    <h1>YOUR CAR<br>DESERVES<br><em>THE BEST.</em></h1>
+    <p class="hero-sub">Auto repair, motorcycle repair, and commercial truck repair all under one roof. We treat your vehicle like family. Serving Waterbury, CT and surrounding areas.</p>
+    <div class="hero-actions">
+      <a href="tel:2038866293" class="btn btn-gold">Call (203) 886-6293</a>
+      <a href="#services" class="btn btn-outline">See Services</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item"><span class="stat-num">24/7</span><span class="stat-label">Available</span></div>
+      <div class="stat-item"><span class="stat-num">100%</span><span class="stat-label">Response Rate</span></div>
+      <div class="stat-item"><span class="stat-num">5&#9733;</span><span class="stat-label">Yelp Rating</span></div>
+    </div>
+  </div>
+  <!-- Watermark SVG -->
+  <div class="hero-watermark" aria-hidden="true">
+    <svg width="420" height="300" viewBox="0 0 420 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Car silhouette -->
+      <path d="M60 200 L90 150 L140 130 L280 130 L330 150 L360 200 L360 230 L60 230 Z" fill="white"/>
+      <path d="M100 150 L120 120 L160 108 L260 108 L300 120 L330 150Z" fill="white" opacity="0.6"/>
+      <circle cx="120" cy="230" r="30" fill="white"/>
+      <circle cx="300" cy="230" r="30" fill="white"/>
+      <circle cx="120" cy="230" r="18" fill="#1A1710" opacity="0.5"/>
+      <circle cx="300" cy="230" r="18" fill="#1A1710" opacity="0.5"/>
+      <!-- Motorcycle hint -->
+      <ellipse cx="340" cy="100" rx="28" ry="28" fill="white" opacity="0.4"/>
+      <ellipse cx="200" cy="100" rx="28" ry="28" fill="white" opacity="0.4"/>
+      <path d="M200 100 L270 90 L340 100" stroke="white" stroke-width="8" fill="none" opacity="0.4"/>
+      <rect x="240" y="75" width="30" height="20" rx="4" fill="white" opacity="0.4"/>
+    </svg>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item">Auto Repair <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Motorcycle Repair <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Commercial Truck Repair <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Open 24 Hours <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Waterbury, CT <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Insurance Work Accepted <span class="ticker-dot"></span></span>
+    <span class="ticker-item">100% Response Rate <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Free Quotes <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Auto Repair <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Motorcycle Repair <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Commercial Truck Repair <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Open 24 Hours <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Waterbury, CT <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Insurance Work Accepted <span class="ticker-dot"></span></span>
+    <span class="ticker-item">100% Response Rate <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Free Quotes <span class="ticker-dot"></span></span>
+  </div>
+</div>
+
+<!-- PHOTO STRIP -->
+<div class="photo-strip" aria-label="Shop photo gallery">
+  <div class="photo-cell">
+    <div class="photo-cell-inner">
+      <span class="photo-cell-icon">&#128664;</span>
+      <span class="photo-cell-label">Auto Repair</span>
+    </div>
+  </div>
+  <div class="photo-cell">
+    <div class="photo-cell-inner">
+      <span class="photo-cell-icon">&#128668;</span>
+      <span class="photo-cell-label">Motorcycles</span>
+    </div>
+  </div>
+  <div class="photo-cell">
+    <div class="photo-cell-inner">
+      <span class="photo-cell-icon">&#128666;</span>
+      <span class="photo-cell-label">Truck Repair</span>
+    </div>
+  </div>
+  <div class="photo-cell">
+    <div class="photo-cell-inner">
+      <span class="photo-cell-icon">&#128295;</span>
+      <span class="photo-cell-label">The Shop</span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services-bg" id="services">
+  <div class="section-inner">
+    <div class="section-label">What We Do</div>
+    <div class="section-title section-title-dark">OUR <em>SERVICES</em></div>
+    <p class="section-body section-body-dark">From daily drivers to motorcycles to heavy commercial trucks, One Up Motor has the experience and equipment to get you back on the road fast.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-top-bar"></div>
+        <span class="service-icon">&#128664;</span>
+        <div class="service-name">Auto Repair</div>
+        <p class="service-desc">Full service auto repair for all makes and models. Diagnostics, maintenance, and major repairs done right the first time.</p>
+        <ul class="service-features">
+          <li>Engine diagnostics and repair</li>
+          <li>Brake service and replacement</li>
+          <li>Oil changes and tune-ups</li>
+          <li>Transmission service</li>
+          <li>Electrical system repair</li>
+          <li>Insurance work accepted</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-top-bar"></div>
+        <span class="service-icon">&#128668;</span>
+        <div class="service-name">Motorcycle Repair</div>
+        <p class="service-desc">Specialized motorcycle service from a team that understands bikes. All makes and models, sport to cruiser to custom.</p>
+        <ul class="service-features">
+          <li>Engine and drivetrain repair</li>
+          <li>Brake and suspension work</li>
+          <li>Electrical and wiring</li>
+          <li>Tire mounting and balancing</li>
+          <li>Seasonal prep and storage</li>
+          <li>Custom and performance work</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-top-bar"></div>
+        <span class="service-icon">&#128666;</span>
+        <div class="service-name">Commercial Truck Repair</div>
+        <p class="service-desc">Keep your fleet moving. We service commercial trucks and work vehicles with the urgency your business demands.</p>
+        <ul class="service-features">
+          <li>Diesel engine repair</li>
+          <li>Brake and air system service</li>
+          <li>DOT inspection prep</li>
+          <li>Fleet maintenance programs</li>
+          <li>Hydraulic system repair</li>
+          <li>Emergency road service</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-bg" id="why-us">
+  <div class="section-inner">
+    <div class="section-label">Why One Up Motor</div>
+    <div class="section-title">WE TREAT YOUR<br>VEHICLE LIKE <em>FAMILY</em></div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-card-icon">&#128337;</div>
+        <div class="why-card-num">01</div>
+        <div class="why-card-title">Open 24 Hours</div>
+        <p class="why-card-desc">Breakdowns do not follow a 9 to 5 schedule. We are available around the clock to handle your repair needs whenever they come up.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">&#127775;</div>
+        <div class="why-card-num">02</div>
+        <div class="why-card-title">100% Response Rate</div>
+        <p class="why-card-desc">We respond to every quote request within one day. You will never be left guessing whether your message was received.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">&#128196;</div>
+        <div class="why-card-num">03</div>
+        <div class="why-card-title">Insurance Work Accepted</div>
+        <p class="why-card-desc">We work with insurance companies directly so you do not have to deal with the hassle. Bring your claim, we handle the rest.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">&#128295;</div>
+        <div class="why-card-num">04</div>
+        <div class="why-card-title">All Makes and Models</div>
+        <p class="why-card-desc">Cars, trucks, motorcycles. Domestic or import. We have the experience to work on virtually any vehicle that comes through the door.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-bg">
+  <div class="section-inner">
+    <div class="section-label">How It Works</div>
+    <div class="section-title section-title-dark">GETTING YOUR VEHICLE<br><em>FIXED IS SIMPLE</em></div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-number">1</div>
+        <div class="step-icon-box">&#128222;</div>
+        <div class="step-title">Call or Text Us</div>
+        <p class="step-desc">Reach out at (203) 886-6293 any time, day or night. Tell us what is going on with your vehicle and we will get you squared away.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">2</div>
+        <div class="step-icon-box">&#128269;</div>
+        <div class="step-title">Get a Diagnosis</div>
+        <p class="step-desc">We inspect and diagnose the issue thoroughly. No guesswork. We tell you exactly what is wrong and what it will take to fix it.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">3</div>
+        <div class="step-icon-box">&#128295;</div>
+        <div class="step-title">We Get to Work</div>
+        <p class="step-desc">Once you approve the repair, our team gets to work. We use quality parts and take the time to do the job right.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">4</div>
+        <div class="step-icon-box">&#128664;</div>
+        <div class="step-title">Back on the Road</div>
+        <p class="step-desc">We walk you through everything that was done before you leave. You drive away confident your vehicle is in top condition.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-bg">
+  <div class="section-inner">
+    <div class="section-label">Customer Reviews</div>
+    <div class="section-title">WHAT <em>PEOPLE</em> ARE SAYING</div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"Called late at night and they picked up immediately. Had my truck diagnosed and fixed faster than any shop I have been to. These guys are the real deal."</p>
+        <div class="review-author">Rick M. &mdash; Waterbury, CT</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"Brought my motorcycle in for a major repair after another shop turned me away. One Up Motor handled it no problem and had it back to me quickly. Very happy."</p>
+        <div class="review-author">Carlos D. &mdash; Naugatuck, CT</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"They worked with my insurance directly and took all the stress out of the repair process. Honest, fast, and fair pricing. Will not go anywhere else."</p>
+        <div class="review-author">Sandra L. &mdash; Waterbury, CT</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-bg" id="faq">
+  <div class="section-inner">
+    <div class="section-label">Common Questions</div>
+    <div class="section-title section-title-dark">FAQ</div>
+    <div class="faq-wrap" id="faqList">
+      <div class="faq-item open">
+        <button class="faq-question" aria-expanded="true">Are you really open 24 hours? <span class="faq-plus">+</span></button>
+        <p class="faq-answer">Yes. One Up Motor is available 24 hours a day. Call or text (203) 886-6293 any time and someone will get back to you. Breakdowns do not wait for business hours and neither do we.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">What types of vehicles do you work on? <span class="faq-plus">+</span></button>
+        <p class="faq-answer">We work on passenger cars, SUVs, motorcycles of all makes and models, and commercial trucks. Domestic and import. If it has an engine, bring it in.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">Do you accept insurance? <span class="faq-plus">+</span></button>
+        <p class="faq-answer">Yes. We work with insurance companies on repair claims. Bring your claim information when you come in and we will coordinate directly with your insurer to simplify the process for you.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">How do I get a quote? <span class="faq-plus">+</span></button>
+        <p class="faq-answer">Call or text us at (203) 886-6293. You can also request a quote through Yelp. We respond within one day and have a 100% response rate. Describe your vehicle and the issue and we will get you a number quickly.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">What is the best auto repair shop in Waterbury, CT? <span class="faq-plus">+</span></button>
+        <p class="faq-answer">One Up Motor is Waterbury's trusted repair shop for auto, motorcycle, and commercial truck repair. Known for 24-hour availability, honest pricing, insurance work, and quality repairs on all makes and models.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="cta-banner-text">
+    <h2>READY TO GET<br><em>BACK ON THE ROAD?</em></h2>
+    <p>Call or text us any time. We respond fast, diagnose accurately, and fix it right. No runaround, no surprises.</p>
+  </div>
+  <div class="cta-banner-actions">
+    <a href="tel:2038866293" class="phone-number">(203) 886-6293</a>
+    <a href="tel:2038866293" class="btn btn-gold">Call or Text Now</a>
+  </div>
+</div>
+
+<!-- LOCATIONS -->
+<section class="locations-bg" id="locations">
+  <div class="section-inner">
+    <div class="section-label">Find Us</div>
+    <div class="section-title section-title-dark">OUR <em>LOCATION</em></div>
+    <div style="margin-top: 3rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 700px;">
+      <div class="loc-card">
+        <div class="loc-name">WATERBURY, CT</div>
+        <div class="loc-badge"><span class="loc-badge-dot"></span> Open 24 Hours</div>
+        <p class="loc-details">
+          Waterbury, Connecticut<br><br>
+          Available 24 hours a day<br>
+          7 days a week<br>
+          Including holidays
+        </p>
+        <a href="tel:2038866293" class="loc-phone">&#128222; (203) 886-6293</a>
+        <a href="tel:2038866293" class="btn btn-gold" style="display:inline-block;">Call for Directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="final-cta-bg">
+  <div class="final-cta" id="quote">
+    <div class="final-cta-glow"></div>
+    <div class="section-label" style="display:inline-block; margin-bottom:1rem;">Available Right Now</div>
+    <h2>DON'T LET A<br>BREAKDOWN <em>SLOW YOU DOWN</em></h2>
+    <p>One Up Motor is standing by 24 hours a day. Call or text for a fast quote and honest repair from Waterbury's most trusted shop.</p>
+    <div class="cta-row">
+      <a href="tel:2038866293" class="btn btn-gold">Call (203) 886-6293</a>
+      <a href="#services" class="btn btn-outline">View All Services</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo-text">ONE UP <span>MOTOR</span></div>
+      <div class="footer-logo-sub">Waterbury, Connecticut</div>
+      <p class="footer-tagline">Auto repair, motorcycle repair, and commercial truck repair. Available 24 hours. We treat your vehicle like family.</p>
+      <div class="social-row">
+        <a href="#" target="_blank" class="social-link" aria-label="Yelp">YP</a>
+        <a href="#" target="_blank" class="social-link" aria-label="Instagram">IG</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li>Auto Repair</li>
+        <li>Motorcycle Repair</li>
+        <li>Commercial Truck Repair</li>
+        <li>Engine Diagnostics</li>
+        <li>Insurance Work</li>
+        <li>Fleet Maintenance</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:2038866293">(203) 886-6293</a></li>
+        <li>Waterbury, CT</li>
+        <li>Open 24 Hours</li>
+        <li style="margin-top:0.75rem;"><a href="#services">Services</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#locations">Location</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 One Up Motor. Waterbury, CT. All rights reserved. Site built by <a href="https://quickflipdigital.com" target="_blank">QuickFlip Digital</a>.</p>
+    <p>Privacy Policy</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = this.closest('.faq-item');
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>
